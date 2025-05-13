@@ -1,9 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>My GitHub Page</title>
+  <meta charset="UTF-8">
+  <title>Think Before You Click</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 2s;
+    }
+
+    #message {
+      display: none;
+      text-align: center;
+      color: white;
+      font-size: 1.5em;
+      padding: 20px;
+    }
+
+    #final {
+      display: none;
+      color: green;
+      font-size: 1.8em;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from GitHub Pages!</h1>
-  <p>This is a test page hosted on GitHub.</p>
+  <div id="message">⚠️ System Error: Device Compromised...<br>Attempting data extraction...</div>
+  <div id="final">✅ You’re safe — but this could have been real.<br><br>⚠️ Don’t click unknown links!</div>
+
+  <script>
+    // After 2 seconds, simulate a 'hack'
+    setTimeout(() => {
+      document.body.style.backgroundColor = 'black';
+      document.getElementById('message').style.display = 'block';
+    }, 2000);
+
+    // After 6 seconds, show the awareness message
+    setTimeout(() => {
+      document.getElementById('message').style.display = 'none';
+      document.getElementById('final').style.display = 'block';
+      document.body.style.backgroundColor = 'white';
+    }, 6000);
+  </script>
 </body>
 </html>
